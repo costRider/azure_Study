@@ -1,0 +1,67 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "privateDnsZone": {
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/privateDnsZones",
+            "apiVersion": "2024-06-01",
+            "name": "[parameters('privateDnsZone')]",
+            "location": "global",
+            "dependsOn": [],
+            "properties": {},
+            "resources": []
+        },
+        {
+            "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+            "apiVersion": "2024-06-01",
+            "name": "[concat(parameters('privateDnsZone'), '/', 'lnk-vnet01')]",
+            "location": "global",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/privateDnsZones', parameters('privateDnsZone'))]"
+            ],
+            "properties": {
+                "virtualNetwork": {
+                    "id": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-resource/providers/Microsoft.Network/virtualNetworks/vnet-01"
+                },
+                "registrationEnabled": true
+            }
+        },
+        {
+            "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+            "apiVersion": "2024-06-01",
+            "name": "[concat(parameters('privateDnsZone'), '/', 'lnk-vnet02')]",
+            "location": "global",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/privateDnsZones', parameters('privateDnsZone'))]"
+            ],
+            "properties": {
+                "virtualNetwork": {
+                    "id": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-resource/providers/Microsoft.Network/virtualNetworks/vnet-02"
+                },
+                "registrationEnabled": true
+            }
+        },
+        {
+            "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+            "apiVersion": "2024-06-01",
+            "name": "[concat(parameters('privateDnsZone'), '/', 'lnk-vnet03')]",
+            "location": "global",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/privateDnsZones', parameters('privateDnsZone'))]"
+            ],
+            "properties": {
+                "virtualNetwork": {
+                    "id": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-new-resource/providers/Microsoft.Network/virtualNetworks/vnet-03"
+                },
+                "registrationEnabled": true
+            }
+        }
+    ],
+    "outputs": {}
+}

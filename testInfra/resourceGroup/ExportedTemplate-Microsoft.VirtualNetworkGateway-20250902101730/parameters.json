@@ -1,0 +1,72 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": {
+                "type": "String",
+                "value": "vgw-test-eastus2"
+            }
+        },
+        "location": {
+            "value": {
+                "type": "String",
+                "value": "eastus2"
+            }
+        },
+        "gatewayType": {
+            "value": {
+                "type": "String",
+                "value": "Vpn"
+            }
+        },
+        "sku": {
+            "value": {
+                "type": "String",
+                "value": "VpnGw2AZ"
+            }
+        },
+        "vpnGatewayGeneration": {
+            "value": {
+                "type": "String",
+                "value": "Generation2"
+            }
+        },
+        "vpnType": {
+            "value": {
+                "type": "String",
+                "value": "RouteBased"
+            }
+        },
+        "subnetId": {
+            "value": {
+                "type": "String",
+                "value": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-resource/providers/Microsoft.Network/virtualNetworks/vnet-02/subnets/GatewaySubnet"
+            }
+        },
+        "newPublicIpAddressName": {
+            "value": {
+                "type": "String",
+                "value": "pip-vgw-eastus01"
+            }
+        },
+        "enableBgp": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "asn": {
+            "value": {
+                "type": "Int",
+                "value": 65515
+            }
+        },
+        "customBgpIpAddress": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        }
+    }
+}

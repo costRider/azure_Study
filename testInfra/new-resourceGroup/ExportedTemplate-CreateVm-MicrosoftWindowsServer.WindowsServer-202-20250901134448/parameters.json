@@ -1,0 +1,205 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": {
+                "type": "String",
+                "value": "northeurope"
+            }
+        },
+        "networkInterfaceName": {
+            "value": {
+                "type": "String",
+                "value": "test-vm03836"
+            }
+        },
+        "enableAcceleratedNetworking": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "networkSecurityGroupName": {
+            "value": {
+                "type": "String",
+                "value": "test-vm03-nsg"
+            }
+        },
+        "networkSecurityGroupRules": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    {
+                        "name": "RDP",
+                        "properties": {
+                            "priority": 300,
+                            "protocol": "TCP",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "3389"
+                        }
+                    },
+                    {
+                        "name": "HTTPS",
+                        "properties": {
+                            "priority": 320,
+                            "protocol": "TCP",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "443"
+                        }
+                    },
+                    {
+                        "name": "HTTP",
+                        "properties": {
+                            "priority": 340,
+                            "protocol": "TCP",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourceAddressPrefix": "*",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*",
+                            "destinationPortRange": "80"
+                        }
+                    }
+                ]
+            }
+        },
+        "subnetName": {
+            "value": {
+                "type": "String",
+                "value": "default"
+            }
+        },
+        "virtualNetworkId": {
+            "value": {
+                "type": "String",
+                "value": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-new-resource/providers/Microsoft.Network/virtualNetworks/vnet-03"
+            }
+        },
+        "publicIpAddressName": {
+            "value": {
+                "type": "String",
+                "value": "pip-test-vm03"
+            }
+        },
+        "publicIpAddressType": {
+            "value": {
+                "type": "String",
+                "value": "Static"
+            }
+        },
+        "publicIpAddressSku": {
+            "value": {
+                "type": "String",
+                "value": "Standard"
+            }
+        },
+        "pipDeleteOption": {
+            "value": {
+                "type": "String",
+                "value": "Delete"
+            }
+        },
+        "virtualMachineName": {
+            "value": {
+                "type": "String",
+                "value": "test-vm03"
+            }
+        },
+        "virtualMachineComputerName": {
+            "value": {
+                "type": "String",
+                "value": "test-vm03"
+            }
+        },
+        "virtualMachineRG": {
+            "value": {
+                "type": "String",
+                "value": "rg-new-resource"
+            }
+        },
+        "osDiskType": {
+            "value": {
+                "type": "String",
+                "value": "Premium_LRS"
+            }
+        },
+        "osDiskDeleteOption": {
+            "value": {
+                "type": "String",
+                "value": "Delete"
+            }
+        },
+        "virtualMachineSize": {
+            "value": {
+                "type": "String",
+                "value": "Standard_D2s_v3"
+            }
+        },
+        "nicDeleteOption": {
+            "value": {
+                "type": "String",
+                "value": "Delete"
+            }
+        },
+        "hibernationEnabled": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "adminUsername": {
+            "value": {
+                "type": "String",
+                "value": "mklee"
+            }
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "patchMode": {
+            "value": {
+                "type": "String",
+                "value": "AutomaticByOS"
+            }
+        },
+        "enablePeriodicAssessment": {
+            "value": {
+                "type": "String",
+                "value": "ImageDefault"
+            }
+        },
+        "enableHotpatching": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "securityType": {
+            "value": {
+                "type": "String",
+                "value": "TrustedLaunch"
+            }
+        },
+        "secureBoot": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "vTPM": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        }
+    }
+}

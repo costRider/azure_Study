@@ -1,0 +1,110 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": {
+                "type": "String",
+                "value": "koreacentral"
+            }
+        },
+        "resourceGroup": {
+            "value": {
+                "type": "String",
+                "value": "rg-resource"
+            }
+        },
+        "bastionHostName": {
+            "value": {
+                "type": "String",
+                "value": "vm-bastion"
+            }
+        },
+        "subnetId": {
+            "value": {
+                "type": "String",
+                "value": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-resource/providers/Microsoft.Network/virtualNetworks/vnet-01/subnets/AzureBastionSubnet"
+            }
+        },
+        "bastionHostSku": {
+            "value": {
+                "type": "String",
+                "value": "Standard"
+            }
+        },
+        "bastionHostScaleUnits": {
+            "value": {
+                "type": "Int",
+                "value": 2
+            }
+        },
+        "enableIpConnect": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "enableTunneling": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "enableShareableLink": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "enableKerberos": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "disableCopyPaste": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "enableSessionRecording": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "enablePrivateOnlyBastion": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "zones": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    "1",
+                    "2",
+                    "3"
+                ]
+            }
+        },
+        "publicIpZones": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    "2",
+                    "3",
+                    "1"
+                ]
+            }
+        },
+        "publicIpAddressName": {
+            "value": {
+                "type": "String",
+                "value": "vnet-01-ip"
+            }
+        }
+    }
+}

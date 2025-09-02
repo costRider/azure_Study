@@ -1,0 +1,331 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": {
+                "type": "String",
+                "value": "koreacentral"
+            }
+        },
+        "extendedLocation": {
+            "value": {
+                "type": "Object",
+                "value": {}
+            }
+        },
+        "virtualNetworkName": {
+            "value": {
+                "type": "String",
+                "value": "vnet-02"
+            }
+        },
+        "tagsByResource": {
+            "value": {
+                "type": "Object",
+                "value": {
+                    "Microsoft.Network/virtualNetworks": {},
+                    "Microsoft.Network/ddosProtectionPlans": {},
+                    "Microsoft.Network/publicIPAddresses": {},
+                    "Microsoft.Network/azureFirewalls": {},
+                    "Microsoft.Network/bastionHosts": {},
+                    "Microsoft.Network/natGateways": {},
+                    "Microsoft.Network/publicIPPrefixes": {},
+                    "Microsoft.Network/networkSecurityGroups": {}
+                }
+            }
+        },
+        "addressSpace": {
+            "value": {
+                "type": "Object",
+                "value": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                }
+            }
+        },
+        "encryptionEnabled": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "encryptionEnforcement": {
+            "value": {
+                "type": "String",
+                "value": "AllowUnencrypted"
+            }
+        },
+        "subnets": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    {
+                        "name": "default",
+                        "properties": {
+                            "addressPrefixes": [
+                                "10.0.1.0/24"
+                            ],
+                            "privateEndpointNetworkPolicies": "Disabled"
+                        }
+                    }
+                ]
+            }
+        },
+        "ddosProtectionPlanEnabled": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "firewallEnabled": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "bastionEnabled": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "ddosProtectionPlanIsNew": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "firewallPublicIpAddressIsNew": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "firewallPolicyIsNew": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "firewallPolicyManagementPublicIPAddressIsNew": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "bastionPublicIpAddressIsNew": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "bastionNsgIsNew": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "ddosProtectionPlanName": {
+            "value": {
+                "type": "String",
+                "value": "##ddos-protection-plan-name-not-set##"
+            }
+        },
+        "ddosProtectionPlanId": {
+            "value": {
+                "type": "String",
+                "value": "##ddos-protection-plan-id-not-set##"
+            }
+        },
+        "firewallName": {
+            "value": {
+                "type": "String",
+                "value": "##firewall-name-not-set##"
+            }
+        },
+        "firewallSkuTier": {
+            "value": {
+                "type": "String",
+                "value": "Standard"
+            }
+        },
+        "firewallPublicIpAddressName": {
+            "value": {
+                "type": "String",
+                "value": "##firewall-public-ip-name-not-set##"
+            }
+        },
+        "firewallPublicIpAddressId": {
+            "value": {
+                "type": "String",
+                "value": ""
+            }
+        },
+        "firewallPolicyName": {
+            "value": {
+                "type": "String",
+                "value": "##firewall-policy-name-not-set##"
+            }
+        },
+        "firewallPolicyId": {
+            "value": {
+                "type": "String",
+                "value": "##firewall-policy-id-not-set##"
+            }
+        },
+        "firewallPolicyTier": {
+            "value": {
+                "type": "String",
+                "value": "Standard"
+            }
+        },
+        "firewallPolicyManagementPublicIPAddressName": {
+            "value": {
+                "type": "String",
+                "value": "##firewall-policy-management-public-i-p-address-name-not-set##"
+            }
+        },
+        "firewallPolicyManagementPublicIPAddressId": {
+            "value": {
+                "type": "String",
+                "value": "##firewall-policy-management-public-i-p-address-id-not-set##"
+            }
+        },
+        "bastionName": {
+            "value": {
+                "type": "String",
+                "value": "##bastion-name-not-set##"
+            }
+        },
+        "bastionPublicIpAddressName": {
+            "value": {
+                "type": "String",
+                "value": "##bastion-public-ip-address-name-not-set##"
+            }
+        },
+        "bastionPublicIPAddressId": {
+            "value": {
+                "type": "String",
+                "value": ""
+            }
+        },
+        "bastionNsgName": {
+            "value": {
+                "type": "String",
+                "value": "##bastion-nsg-name-not-set##"
+            }
+        },
+        "bastionNsgId": {
+            "value": {
+                "type": "String",
+                "value": "##bastion-nsg-id-not-set##"
+            }
+        },
+        "natGatewaysWithNewPublicIpAddress": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "natGatewaysWithoutNewPublicIpAddress": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "natGatewayPublicIpAddressesNewNames": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "networkSecurityGroupsNew": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "ipv6Enabled": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "subnetCount": {
+            "value": {
+                "type": "Int",
+                "value": 1
+            }
+        },
+        "addressSpaceStartingAddressChanged": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "addressSpaceAddressSizeChanged": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "defaultSubnetChanged": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "subnetsInfo": {
+            "value": {
+                "type": "Array",
+                "value": [
+                    {
+                        "cidr": "10.0.1.0/24",
+                        "name": "Default",
+                        "natGw": "none",
+                        "nsg": "none",
+                        "udr": "none"
+                    }
+                ]
+            }
+        },
+        "ipamPools": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "networkManager": {
+            "value": {
+                "type": "Object",
+                "value": {}
+            }
+        },
+        "createNetworkManager": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "networkManagerName": {
+            "value": {
+                "type": "String",
+                "value": "##network-manager-name-not-set##"
+            }
+        },
+        "avnmResourceGroup": {
+            "value": {
+                "type": "String",
+                "value": "##avnm-resource-group-not-set##"
+            }
+        },
+        "avnmSubscriptionId": {
+            "value": {
+                "type": "String",
+                "value": "##avnm-subscription-id-not-set##"
+            }
+        }
+    }
+}

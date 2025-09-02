@@ -1,0 +1,109 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "String"
+        },
+        "connectionType": {
+            "type": "String"
+        },
+        "virtualNetworkGatewayId1": {
+            "type": "String"
+        },
+        "connectionName": {
+            "type": "String"
+        },
+        "useLocalAzureIpAddress": {
+            "type": "Bool"
+        },
+        "enableBgp": {
+            "type": "Bool"
+        },
+        "connectionProtocol": {
+            "type": "String"
+        },
+        "ipsecPolicies": {
+            "type": "Array"
+        },
+        "dpdTimeoutSeconds": {
+            "type": "Int"
+        },
+        "virtualNetworkGatewayId2": {
+            "type": "String"
+        },
+        "ingressNatRules": {
+            "type": "Array"
+        },
+        "egressNatRules": {
+            "type": "Array"
+        },
+        "ingressNatRules2": {
+            "type": "Array"
+        },
+        "egressNatRules2": {
+            "type": "Array"
+        },
+        "connectionReverseName": {
+            "type": "String"
+        },
+        "connectionReverseLocation": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/connections",
+            "apiVersion": "2024-01-01",
+            "name": "[parameters('connectionName')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [],
+            "tags": {},
+            "properties": {
+                "connectionType": "[parameters('connectionType')]",
+                "virtualNetworkGateway1": {
+                    "id": "[parameters('virtualNetworkGatewayId1')]"
+                },
+                "useLocalAzureIpAddress": "[parameters('useLocalAzureIpAddress')]",
+                "enableBgp": "[parameters('enableBgp')]",
+                "connectionProtocol": "[parameters('connectionProtocol')]",
+                "authenticationType": "PSK",
+                "SharedKey": "P@ssw0rd123",
+                "ipsecPolicies": "[parameters('ipsecPolicies')]",
+                "dpdTimeoutSeconds": "[parameters('dpdTimeoutSeconds')]",
+                "ingressNatRules": "[parameters('ingressNatRules')]",
+                "egressNatRules": "[parameters('egressNatRules')]",
+                "virtualNetworkGateway2": {
+                    "id": "[parameters('virtualNetworkGatewayId2')]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/connections",
+            "apiVersion": "2024-01-01",
+            "name": "[parameters('connectionReverseName')]",
+            "location": "[parameters('connectionReverseLocation')]",
+            "dependsOn": [],
+            "tags": {},
+            "properties": {
+                "connectionType": "[parameters('connectionType')]",
+                "virtualNetworkGateway1": {
+                    "id": "[parameters('virtualNetworkGatewayId2')]"
+                },
+                "useLocalAzureIpAddress": "[parameters('useLocalAzureIpAddress')]",
+                "enableBgp": "[parameters('enableBgp')]",
+                "connectionProtocol": "[parameters('connectionProtocol')]",
+                "authenticationType": "PSK",
+                "SharedKey": "P@ssw0rd123",
+                "ipsecPolicies": "[parameters('ipsecPolicies')]",
+                "dpdTimeoutSeconds": "[parameters('dpdTimeoutSeconds')]",
+                "ingressNatRules": "[parameters('ingressNatRules2')]",
+                "egressNatRules": "[parameters('egressNatRules2')]",
+                "virtualNetworkGateway2": {
+                    "id": "[parameters('virtualNetworkGatewayId1')]"
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}

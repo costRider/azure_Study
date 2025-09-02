@@ -1,0 +1,102 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": {
+                "type": "String",
+                "value": "eastus2"
+            }
+        },
+        "connectionType": {
+            "value": {
+                "type": "String",
+                "value": "Vnet2Vnet"
+            }
+        },
+        "virtualNetworkGatewayId1": {
+            "value": {
+                "type": "String",
+                "value": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-resource/providers/Microsoft.Network/virtualNetworkGateways/vgw-test-eastus2"
+            }
+        },
+        "connectionName": {
+            "value": {
+                "type": "String",
+                "value": "cn-usToeu"
+            }
+        },
+        "useLocalAzureIpAddress": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "enableBgp": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "connectionProtocol": {
+            "value": {
+                "type": "String",
+                "value": "IKEv2"
+            }
+        },
+        "ipsecPolicies": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "dpdTimeoutSeconds": {
+            "value": {
+                "type": "Int",
+                "value": 45
+            }
+        },
+        "virtualNetworkGatewayId2": {
+            "value": {
+                "type": "String",
+                "value": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-new-resource/providers/Microsoft.Network/virtualNetworkGateways/vgw-test-euro"
+            }
+        },
+        "ingressNatRules": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "egressNatRules": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "ingressNatRules2": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "egressNatRules2": {
+            "value": {
+                "type": "Array",
+                "value": []
+            }
+        },
+        "connectionReverseName": {
+            "value": {
+                "type": "String",
+                "value": "cn-euTous"
+            }
+        },
+        "connectionReverseLocation": {
+            "value": {
+                "type": "String",
+                "value": "northeurope"
+            }
+        }
+    }
+}

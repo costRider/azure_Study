@@ -1,0 +1,129 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": {
+                "type": "String",
+                "value": "koreacentral"
+            }
+        },
+        "networkInterfaceName": {
+            "value": {
+                "type": "String",
+                "value": "vm-bastion234"
+            }
+        },
+        "enableAcceleratedNetworking": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "subnetName": {
+            "value": {
+                "type": "String",
+                "value": "snet-mgmt"
+            }
+        },
+        "virtualNetworkId": {
+            "value": {
+                "type": "String",
+                "value": "/subscriptions/b560586a-65a7-4ad6-9301-a7ae749b0155/resourceGroups/rg-resource/providers/Microsoft.Network/virtualNetworks/vnet-01"
+            }
+        },
+        "virtualMachineName": {
+            "value": {
+                "type": "String",
+                "value": "vm-bastion"
+            }
+        },
+        "virtualMachineComputerName": {
+            "value": {
+                "type": "String",
+                "value": "vm-bastion"
+            }
+        },
+        "virtualMachineRG": {
+            "value": {
+                "type": "String",
+                "value": "rg-resource"
+            }
+        },
+        "osDiskType": {
+            "value": {
+                "type": "String",
+                "value": "Premium_LRS"
+            }
+        },
+        "osDiskDeleteOption": {
+            "value": {
+                "type": "String",
+                "value": "Delete"
+            }
+        },
+        "virtualMachineSize": {
+            "value": {
+                "type": "String",
+                "value": "Standard_D2s_v3"
+            }
+        },
+        "nicDeleteOption": {
+            "value": {
+                "type": "String",
+                "value": "Delete"
+            }
+        },
+        "hibernationEnabled": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "adminUsername": {
+            "value": {
+                "type": "String",
+                "value": "mklee"
+            }
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "patchMode": {
+            "value": {
+                "type": "String",
+                "value": "AutomaticByOS"
+            }
+        },
+        "enablePeriodicAssessment": {
+            "value": {
+                "type": "String",
+                "value": "ImageDefault"
+            }
+        },
+        "enableHotpatching": {
+            "value": {
+                "type": "Bool",
+                "value": false
+            }
+        },
+        "securityType": {
+            "value": {
+                "type": "String",
+                "value": "TrustedLaunch"
+            }
+        },
+        "secureBoot": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        },
+        "vTPM": {
+            "value": {
+                "type": "Bool",
+                "value": true
+            }
+        }
+    }
+}
